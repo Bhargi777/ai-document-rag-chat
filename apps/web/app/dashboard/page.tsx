@@ -1,10 +1,10 @@
-import { Sidebar } from '@/components/sidebar';
-import { ChatPanel } from '@/components/chat-panel';
-import { fetchHealth } from '@/lib/api';
+import { Sidebar } from '../../components/sidebar';
+import { ChatPanel } from '../../components/chat-panel';
+import { fetchHealth } from '../../lib/api';
 
 export default async function DashboardPage() {
   const health = await fetchHealth();
-  const messages = [
+  const messages: Array<{ role: 'user' | 'assistant'; text: string }> = [
     { role: 'assistant', text: 'Welcome! Upload documents to begin semantic search.' },
     { role: 'user', text: 'How does the RAG pipeline work?' },
   ];
