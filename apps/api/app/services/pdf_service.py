@@ -1,16 +1,26 @@
 from typing import List
 from pathlib import Path
+from pypdf import PdfReader
 
 class PdfService:
     def extract_text(self, path: str) -> str:
         file_path = Path(path)
         if not file_path.exists():
             raise FileNotFoundError(f"PDF file not found at {path}")
-        # In production this should use a PDF parser like pypdf or pdfminer.
-        return ""
+
+        reader = PdfReader(str(file_path))
+        text_lines: List[str] = []
+        for page in reader.pages:
+            text_lines.append(page.extract_text() or "")
+        return "\n\n".join(text_lines)
 
     def extract_metadata(self, path: str) -> dict:
-        return {"source": path, "pages": 0}
+        file_path = Path(path)
+        reader = PdfReader(str(file_path))
+        return {
+            "source": str(file_path.name),
+            "pages": len(reader.pages),
+        }
 
     def split_text(self, text: str, chunk_size: int = 1000, overlap: int = 200) -> List[str]:
         chunks: List[str] = []
