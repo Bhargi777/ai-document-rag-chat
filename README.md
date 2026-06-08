@@ -19,6 +19,19 @@ This repository contains a modern monorepo structure for a document retrieval an
 2. Configure environment variables for backend and vector stores.
 3. Start the backend and frontend locally.
 
+## Project Structure
+
+- `apps/web` — Next.js frontend application.
+- `apps/api` — FastAPI backend and service layer.
+- `packages/ui` — Shared design system components.
+- `packages/shared` — Utility modules and shared helpers.
+- `infrastructure` — Docker and deployment orchestration.
+- `docs` — Architecture, API, and deployment documentation.
+
+## Contribution
+
+Contributions are welcome via issues and pull requests. Please follow the templates in `.github/`.
+
 ## License
 
 MIT License.
