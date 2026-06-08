@@ -2,7 +2,9 @@
 node_modules
 .DS_Store
 .npm
-.env*
+.env
+.env.local
+.env.*.local
 *.log
 **/dist
 **/.next
