@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ThemeToggle } from './theme-toggle';
 
 const navItems = [
   { href: '/dashboard', label: 'Dashboard' },
@@ -21,6 +22,9 @@ export function Sidebar() {
             {item.label}
           </Link>
         ))}
+      </div>
+      <div className="mt-auto pt-6">
+        <ThemeToggle />
       </div>
     </aside>
   );
