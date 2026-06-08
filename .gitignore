@@ -1,0 +1,20 @@
+# Node
+node_modules
+.DS_Store
+.npm
+.env*
+*.log
+**/dist
+**/.next
+**/out
+
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.db
+.env
+.venv
+
+# VSCode
+.vscode/

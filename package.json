@@ -1,0 +1,14 @@
+{
+  "name": "ai-document-rag-chat",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace apps/web dev",
+    "build": "npm --workspace apps/web build",
+    "lint": "npm --workspace apps/web lint"
+  }
+}
