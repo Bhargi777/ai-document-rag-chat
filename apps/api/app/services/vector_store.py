@@ -25,12 +25,17 @@ class PineconeStore(VectorStore):
         self.store = None
 
     def add_documents(self, docs: list[Document]) -> None:
-        self.store = Pinecone.from_documents(docs, self.embedder.model, index_name=settings.pinecone_index)
+        self.store = Pinecone.from_documents(
+            docs,
+            self.embedder.model,
+            index_name=settings.pinecone_index,
+            namespace=settings.pinecone_namespace,
+        )
 
     def similarity_search(self, query: str, k: int = 5):
         if self.store is None:
             raise RuntimeError("Pinecone store not initialized")
-        return self.store.similarity_search(query, k=k)
+        return self.store.similarity_search(query, k=k, namespace=settings.pinecone_namespace)
 
 class FaissStore(VectorStore):
     def __init__(self, embedder: EmbeddingsService):

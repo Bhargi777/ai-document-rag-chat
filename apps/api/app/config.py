@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     pinecone_api_key: str = ""
     pinecone_environment: str = ""
     pinecone_index: str = "rag-index"
+    pinecone_namespace: str = "rag-chat"
     faiss_enabled: bool = False
 
     class Config:
