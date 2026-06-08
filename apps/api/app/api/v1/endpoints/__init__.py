@@ -1,1 +1,1 @@
-from . import auth, documents, chat, health, users, history
+from . import auth, analytics, documents, chat, health, users, history
