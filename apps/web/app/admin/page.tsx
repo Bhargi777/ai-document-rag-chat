@@ -10,7 +10,7 @@ export default function AdminPage() {
           <p>Admin features are planned for managing uploads, sessions, and usage analytics.</p>
         </div>
         <div className="mt-8">
-          <Link href="/dashboard" className="rounded-full bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-400">
+          <Link href="/dashboard" className="rounded-full bg-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:bg-slate-600">
             Back to Dashboard
           </Link>
         </div>
