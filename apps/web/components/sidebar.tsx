@@ -6,6 +6,7 @@ const navItems = [
   { href: '/dashboard/upload', label: 'Upload' },
   { href: '/dashboard/chat', label: 'Chat' },
   { href: '/dashboard/documents', label: 'Documents' },
+  { href: '/dashboard/analytics', label: 'Analytics' },
 ] as const;
 
 export function Sidebar() {
