@@ -35,6 +35,12 @@ class ChatSession(SQLModel, table=True):
     owner: Optional[User] = Relationship(back_populates="chat_sessions")
     messages: List["ChatMessage"] = Relationship(back_populates="session")
 
+class UsageMetric(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    event_type: str
+    payload: str
+    occurred_at: datetime = Field(default_factory=datetime.utcnow)
+
 class ChatMessage(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     session_id: int = Field(foreign_key="chatsession.id")
