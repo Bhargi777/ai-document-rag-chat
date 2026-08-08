@@ -22,6 +22,8 @@ httpx = "^0.25.0"
 python-multipart = "^0.0.6"
 pinecone-client = "^2.2.0"
 pypdf = "^6.13.1"
+psycopg2-binary = "^2.9.9"
+email-validator = "^2.1.0"
 faiss-cpu = { version = "^1.7.4", optional = true }
 alembic = "^1.11.1"
 pytest = "^8.4.0"
