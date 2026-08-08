@@ -24,7 +24,7 @@ class DocumentChunk(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     document_id: int = Field(foreign_key="document.id")
     content: str
-    metadata: Optional[str] = None
+    chunk_metadata: Optional[str] = None
     document: Optional[Document] = Relationship(back_populates="chunks")
 
 class ChatSession(SQLModel, table=True):
